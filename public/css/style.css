@@ -39,11 +39,14 @@
 .scrolled {
     background-color: rgb(93,98,66);
 }
+#navbarOffcanvasLg {
+    background-color: rgb(93,98,66);
+}
 .hidden {
     display: none;
 }
 #spacer {
-    height: calc(20rem - 80px);
+    height: 22rem;
 }
 #spacer-small {
     height: 80px;
@@ -51,6 +54,9 @@
 body {
     height: 100vh;
     background-color: rgb(169,171,158);
+}
+.nav-link {
+    text-shadow: #000000 0px 0px 5px;
 }
 /* Login / Register Page */
 #loginContainer {
