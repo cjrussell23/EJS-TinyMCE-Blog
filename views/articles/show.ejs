@@ -49,19 +49,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
                     </li>
-                    <% if (user.admin) { %>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/articles/new">NewArticle</a>
-                        </li>
-                        <% } %>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- End Navigation Bar -->
-    <div class="container-md">
+    <div id="header-small">
+        <div id="header-image">
+        </div>
+    </div>
+    <div id="spacer-small">
+    </div>
+    <div class="container-md mt-4">
         <div class="row">
-            <div class="col-3">
+            <div class="col-12 col-md-3 px-0 px-md-2">
                 <div class="card px-2 py-2">
                     <img src="<%= article.previewImageURL %>" class="card-img-top" alt="<%= article.title %>">
                     <h1 class="card-title">
@@ -69,7 +70,6 @@
                     </h1>
                     <div class="card-subtitle text-muted mb-2">
                         <%= article.createdAt.toLocaleDateString() %>
-                            <%= article.createdAt.toLocaleTimeString() %>
                     </div>
                     <a href="/" class="btn btn-primary mx-2 my-2">All Articles</a>
                     <!-- Only for admin -->
@@ -83,7 +83,7 @@
 
                 </div>
             </div>
-            <div class="col-9">
+            <div class="col-12 col-md-9 px-0 px-md-2">
                 <div class="card px-2 py-2">
                     <div class="card-text">
                         <%- article.sanitizedHtml %>
