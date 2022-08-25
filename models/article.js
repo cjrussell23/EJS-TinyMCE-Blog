@@ -30,6 +30,10 @@ const articleSchema = new mongoose.Schema({
     sanitizedHtml: {
         type: String,
         required: true
+    },
+    previewImageURL: {
+        type: String,
+        required: false
     }
 });
 

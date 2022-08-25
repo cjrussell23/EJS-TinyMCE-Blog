@@ -9,43 +9,49 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Blog</title>
 </head>
 
 <body>
     <%- include('../_navigation') %>
-    <div class="container-fluid homePageImage d-flex flex-column justify-content-center align-items-center">
-        <h1 class="text-white">Welcome to my Blog!</h1>
-    </div>
-    <!-- End Page Header -->
-    <!-- Main Content -->
-    <div class="container">
-        <a href="/articles/new" class="btn btn-success">New Article</a>
-        <% articles.forEach(article=> { %>
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <%= article.title %>
-                    </h4>
-                    <div class="card-subtitle text-muted mb-2">
-                        <%= article.createdAt.toLocaleDateString() %> at <%= article.createdAt.toLocaleTimeString() %>
-                    </div>
-                    <div class="card-text">
-                        <%= article.description %>
-                    </div>
-                    <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
-                    <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
-                    <form class="d-inline" action="/articles/<%= article.id %>?_method=DELETE" method="post">
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                    </form>
-                </div>
+        <div class="container-fluid d-flex flex-column justify-content-center align-items-center" id="homeImage">
+            <h1 class="text-white">Welcome <%= user.username %>!</h1>
+            <!-- Only for admin -->
+            <% if (user.admin) { %>
+                <a href="/articles/new" class="btn btn-primary">Create a new article!</a>
+            <% } %>
+            <!-- End Only for admin -->
+        </div>
+        <!-- End Page Header -->
+        <!-- Main Content -->
+        <div class="container">
+            <div class="container d-flex flex-wrap" id="articles">
+                <% articles.forEach(article=> { %>
+                        <a href="articles/<%= article.slug %>" class="article-link">
+                            <div class="card article-card">
+                                <img src="<%= article.previewImageURL %> " class="card-img-top"
+                                    alt="Image for <%= article.title %>" height="250">
+                                <div class="card-title">
+                                    <h4 class="text-center">
+                                        <%= article.title %>
+                                    </h4>
+                                    <div class="card-text text-muted mb-2 px-2">
+                                        <%= article.createdAt.toLocaleDateString() %> at <%=
+                                                article.createdAt.toLocaleTimeString() %>
+                                    </div>
+                                    <div class="card-subtitle px-2">
+                                        <%= article.description %>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    <% }) %>
             </div>
-            <% }) %>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
