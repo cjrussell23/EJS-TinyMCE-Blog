@@ -21,6 +21,9 @@ router.get('/:slug', async (req, res) => {
     if (article == null) {
         res.redirect('/');
     };
+    if (!req.session.user) {
+        req.session.user = new Users({ username: 'Guest', admin: false });
+    }
     res.render('articles/show', { article: article, user: req.session.user });
 });
 
