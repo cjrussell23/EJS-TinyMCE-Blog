@@ -41,11 +41,11 @@ function handleTouchMove(evt) {
         if (xDiff > 0) {
             /* right swipe */
             console.log("right swipe");
-            document.getElementById("nav-toggle").click();
+            document.getElementById("main-nav-toggle").click();
         } else {
             /* left swipe */
             console.log("left swipe");
-            document.getElementById("nav-toggle").click();
+            document.getElementById("main-nav-toggle").click();
         }
     } else {
         if (yDiff > 0) {
