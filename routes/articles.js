@@ -25,14 +25,14 @@ router.get('/:slug', async (req, res) => {
 });
 
 router.post('/', async (req, res, next) => {
-    if (!req.session.user.admin) {
+    if (!req.session.user?.admin) {
         res.redirect('/login');
     }
     req.article = new Article();
     next();
 }, saveArticleAndRedirect('new'));
 router.put('/:id', async (req, res, next) => {
-    if (!req.session.user.admin) {
+    if (!req.session.user?.admin) {
         res.redirect('/login');
     }
     console.log("Update article");
