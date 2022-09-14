@@ -15,7 +15,7 @@ const articleSchema = new mongoose.Schema({
         type: String
     },
     markdown: {
-        required: true,
+        required: false,
         type: String
     },
     createdAt: {
