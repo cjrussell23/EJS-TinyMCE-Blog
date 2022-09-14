@@ -9,8 +9,6 @@ window.addEventListener("scroll", (event) => {
         nav.classList.remove("scrolled");
     }
 });
-console.log("Scroll event listener added");
-
 document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
 

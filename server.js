@@ -6,6 +6,7 @@ const express = require('express'),
     Article = require('./models/article'),
     md5 = require('md5'),
     sessions = require('express-session');
+    path = require('path');
 
 // load env variables
 const dotenv = require('dotenv');
@@ -31,8 +32,10 @@ dbConnection.on("error", (err) => console.log(`Connection error ${err}`));
 dbConnection.once("open", () => console.log("Connected to DB!"));
 
 // middleware
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 app.use(sessions({
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -46,10 +49,7 @@ app.set('port', process.env.PORT || 3000);
 app.get('/', async (req, res) => {
     const articles = await Article.find().sort({ createdAt: 'desc' });
     // if no user is logged in, set the user
-    if (!req.session.user) {
-        req.session.user = new Users({ username: 'Guest', admin: false });
-    }
-    res.render('articles/index', { articles: articles, user: req.session.user });
+    res.render('articles/index', { articles: articles, user: req?.session?.user });
 });
 app.get('/login', (req, res) => {
     res.render('pages/login');
