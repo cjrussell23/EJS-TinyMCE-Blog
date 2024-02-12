@@ -1,4 +1,4 @@
-# EJS TinyMCE Blog
+# EJS TinyMCE Blog Alison
 
 <a name="readme-top"></a>
 
@@ -11,12 +11,12 @@
     A simple blog application created using EJS for templating and TinyMCE as a rich text editor for creating blog posts.
     <br />
     <br />
-    <a href="https://github.com/cjrussell23/EJS-TinyMCE-Blog"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/cjrussell23/EJS-TinyMCE-Blog-Alison"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/cjrussell23/EJS-TinyMCE-Blog/issues">Report Bug</a>
+    <a href="https://github.com/cjrussell23/EJS-TinyMCE-Blog-Alison/issues">Report Bug</a>
     ·
-    <a href="https://github.com/cjrussell23/EJS-TinyMCE-Blog/issues">Request Feature</a>
+    <a href="https://github.com/cjrussell23/EJS-TinyMCE-Blog-Alison/issues">Request Feature</a>
   </p>
 </div>
 
@@ -41,11 +41,11 @@
 
 ## About The Project
 
-This is a simple blog application created primarily for a friend back when I was still learning node and basic front-end.
+This is a simple blog application created for my friend Alison back when I was still learning node and basic front-end.
 
 It uses EJS for templating the pages and TinyMCE as the rich text editor for creating blog posts.
 
-![alison-blog](https://github.com/cjrussell23/EJS-TinyMCE-Blog/assets/81775200/dd159c89-b334-4877-a3a9-a4525b43844f)
+![alison-blog](https://github.com/cjrussell23/EJS-TinyMCE-Blog-Alison/assets/81775200/dd159c89-b334-4877-a3a9-a4525b43844f)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,7 +70,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/cjrussell23/EJS-TinyMCE-Blog.git
+   git clone https://github.com/cjrussell23/EJS-TinyMCE-Blog-Alison.git
    ```
 2. Install NPM packages
    ```sh
