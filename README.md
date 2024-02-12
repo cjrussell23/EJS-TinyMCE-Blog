@@ -45,6 +45,8 @@ This is a simple blog application created primarily for a friend back when I was
 
 It uses EJS for templating the pages and TinyMCE as the rich text editor for creating blog posts.
 
+![alison-blog](https://github.com/cjrussell23/EJS-TinyMCE-Blog/assets/81775200/dd159c89-b334-4877-a3a9-a4525b43844f)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
